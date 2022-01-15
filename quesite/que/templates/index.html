@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action = "" method = "POST">
+    {% csrf_token %}
+    <center>
+        <div style = "position:relative; top:700px;">
+            {{form.user_name}}
+        </div>
+
+
+        <div style = "position:relative; top:710px;">
+            <input type="submit" value=Registrace(1) name="insert">
+        </div>
+    </center>
+
+    <div style="position:relative; left:740px; top:50px;">
+        <div style="width: 50px; float:left; height:21px; background:gray; margin:40px;">
+            <input type="submit" value=Další(2) name="first_to_second">
+
+        </div>
+
+        <div style="width: 50px; float:left; height:21px; background:gray; margin:40px;">
+            <input type="submit" value=Další(3) name="second_to_third">
+        </div>
+
+        <div style="width: 100px; float:left; height:21px; background:gray; margin:40px;">
+            <input type="submit" value=Nashledanou(4) name="third_to_remove">
+        </div>
+    </div>
+</form>
+
+<div style="position:relative; left: 250px; top:150px;">
+    <table style="font-size:150%; width:500px; table-layout: fixed;">
+        <tr>
+
+            <th>{{firstQ.0}}</th>
+            <th>{{secondQ.0}}</th>
+            <th>{{thirdQ.0}}</th>
+
+        </tr>
+        <tr>
+
+            <th>{{firstQ.1}}</th>
+            <th>{{secondQ.1}}</th>
+            <th>{{thirdQ.1}}</th>
+
+        </tr>
+        <tr>
+            <th>{{firstQ.2}}</th>
+            <th>{{secondQ.2}}</th>
+            <th>{{thirdQ.2}}</th>
+
+        </tr>
+    </table>
+</div>
+<div style="position:relative; left:770px; top:400px; width:360px;">
+    {%for msg in messages%}
+    <h1>{{ msg }}</h1>
+    {%endfor%}
+</div>
+
+
+
+</body>
+</html>
